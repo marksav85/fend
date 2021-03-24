@@ -9,6 +9,11 @@ dotenv.config();
 var textapi = new meaning_cloud({
   application_key: api_key.env.API_KEY
 });*/
+var json = {
+    'title': 'test json response',
+    'message': 'this is a message',
+    'time': 'now'
+}
 
 const app = express()
 app.use(cors())
@@ -21,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('dist'))
 
-console.log(__dirname)
+console.log(JSON.stringify(mockAPIResponse))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')

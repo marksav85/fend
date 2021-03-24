@@ -16,6 +16,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "node": "^15.10.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   },
@@ -25,8 +26,7 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "webpack-dev-server": "^3.7.2",
-    "meaning-cloud": "^1.1.10"
-
+    "meaning-cloud": "^1.1.10",
+    "webpack-dev-server": "^3.7.2"
   }
 }
