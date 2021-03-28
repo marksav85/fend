@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "build-dev": "webpack serve  --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +16,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node": "^15.12.0",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.6.0"
+    "node": "^15.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
@@ -32,8 +30,11 @@
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^11.0.1",
+    "serve": "^11.3.2",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2",
     "workbox-webpack-plugin": "^6.1.2"
   }
