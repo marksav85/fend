@@ -7,9 +7,9 @@ var MeaningCloud = require('meaning-cloud');
 const dotenv = require('dotenv');
 dotenv.config();
 
-let meaning = new MeaningCloud({
+/*let meaning = new MeaningCloud({
   key: process.env.API_KEY // API Key. Required.
-});
+});*/
 
 var json = {
     'title': 'test json response',
@@ -43,3 +43,13 @@ app.listen(8090, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+app.post('/data', async(req, res) => {
+    const response = await fetch();
+    try {
+        const data = await response.json();
+        res.send(data);
+    } catch(error) {
+        console.log("error", error);
+    }
+});
