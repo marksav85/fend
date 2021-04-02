@@ -45,9 +45,9 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/data', async(req, res) => {
-    const response = await fetch();
+    const res = await fetch();
     try {
-        const data = await response.json();
+        const data = await res.json();
         res.send(data);
     } catch(error) {
         console.log("error", error);
