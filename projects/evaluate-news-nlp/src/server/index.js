@@ -3,9 +3,9 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 var bodyParser = require('body-parser')
 var cors = require('cors')
-var MeaningCloud = require('meaning-cloud');
 const dotenv = require('dotenv');
 dotenv.config();
+
 
 /*let meaning = new MeaningCloud({
   key: process.env.API_KEY // API Key. Required.
@@ -13,7 +13,7 @@ dotenv.config();
 
 var json = {
     'title': 'test json response',
-    'message': 'this is a message',
+    'message': 'this is a thing',
     'time': 'now'
 }
 
@@ -44,10 +44,19 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
+const apiKey = 'a30afc3cadc818a1fb48d2163587cd5f'
+console.log('Your API Key is' + apiKey)
+let userInput = []
+
 app.post('/data', async(req, res) => {
-    const res = await fetch();
+    userInput = req.body.url;
+    console.log(`You entered: ${userInput}`);
+    const getAPI = '${baseURL}key=${apiKey}&url=${userInput}&lang=en'
+    const response = await fetch(getAPI);
+    console.log (response)
     try {
-        const data = await res.json();
+        const data = await response.json();
         res.send(data);
     } catch(error) {
         console.log("error", error);

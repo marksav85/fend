@@ -27,13 +27,15 @@ const postData = async ( url = '', data = {})=>{
     }
 };
 
-fetch('http://localhost:8090/test')
+fetch('http://localhost:8090/data', res)
     .then(res => res.json())
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+        document.getElementById('results').innerHTML = res.agreement;
+        document.getElementById('results').innerHTML = res.agreement;
+        document.getElementById('results').innerHTML = res.agreement;
     })
 }
 
-postData('http://localhost:8090/data', {url: formText})
+//postData('http://localhost:8090/data', {url: formText})
 
 export { handleSubmit }
