@@ -3,19 +3,10 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 var bodyParser = require('body-parser')
 var cors = require('cors')
-var MeaningCloud = require('meaning-cloud');
 const dotenv = require('dotenv');
 dotenv.config();
+projectData = {};
 
-/*let meaning = new MeaningCloud({
-  key: process.env.API_KEY // API Key. Required.
-});*/
-
-var json = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
 
 const app = express()
 app.use(cors())
@@ -37,19 +28,21 @@ app.get('/', function (req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8090, function () {
-    console.log('Example app listening on port 8090!')
+  console.log('running on localhost: 8090');
+  console.log('server running successfully!')
 })
 
-app.get('/test', function (req, res) {
+/*app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
-})
+})*/
 
-app.post('/data', async(req, res) => {
-    const res = await fetch();
-    try {
-        const data = await res.json();
-        res.send(data);
-    } catch(error) {
-        console.log("error", error);
-    }
-});
+app.get('/all', sendData);
+function sendData (req, res) {
+  res.send(projectData);
+};
+
+app.post('/add', addData);
+function addData(req, res) {
+  projectData.agreement = req.body.agreement;
+  console.log(projectData);
+}
