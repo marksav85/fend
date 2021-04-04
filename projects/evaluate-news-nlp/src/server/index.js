@@ -25,7 +25,9 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
     //res.sendFile(path.resolve('src/client/views/index.html'))
 })
-
+app.get('/test', function (req, res) {
+    res.send(projectData)
+})
 // designates what port the app will listen to for incoming requests
 app.listen(8090, function () {
   console.log('running on localhost: 8090');

@@ -4,7 +4,7 @@ const apiKey = 'a30afc3cadc818a1fb48d2163587cd5f';
 
 /* Global Variables */
 const metric= '&units=metric'
-const local = 'http://localhost:8000/';
+const local = 'http://localhost:8090/';
 
 function handleSubmit(event) {
     event.preventDefault()
@@ -26,7 +26,7 @@ function handleSubmit(event) {
       postData('http://localhost:8090/add', {agreement: data.agreement});
       })
     .then(function(){
-      updateUI()
+      Client.updateUI()
     })
 }
 
@@ -74,3 +74,5 @@ const postData = async ( url = '', data = {})=>{
 }
 
 export { handleSubmit }
+export { updateUI }
+export { getSentiment }
