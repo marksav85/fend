@@ -41,6 +41,7 @@ app.listen(8090, function () {
 app.get('/all', sendData);
 function sendData (req, res) {
   res.send(projectData);
+  console.log(projectData)
 };
 
 app.post('/add', addData);

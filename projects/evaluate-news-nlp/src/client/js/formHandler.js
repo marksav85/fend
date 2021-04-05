@@ -3,7 +3,6 @@ const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 const apiKey = 'a30afc3cadc818a1fb48d2163587cd5f';
 
 /* Global Variables */
-const metric= '&units=metric'
 const local = 'http://localhost:8090/';
 
 function handleSubmit(event) {
@@ -26,7 +25,7 @@ function handleSubmit(event) {
       postData('http://localhost:8090/add', {agreement: data.agreement});
       })
     .then(function(){
-      Client.updateUI()
+      updateUI()
     })
 }
 
