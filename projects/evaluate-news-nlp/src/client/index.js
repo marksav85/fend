@@ -1,5 +1,7 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { checkForName } from './js/nameChecker';
+import { handleSubmit } from './js/formHandler';
+import { analyzeText } from './js/formHandler';
+import { updateUI } from './js/formHandler';
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -9,9 +11,11 @@ import './styles/header.scss';
 
 console.log(checkForName);
 
-alert("I EXIST")
+/*alert("I BELIEVE")*/
 
 export {
     checkForName,
-    handleSubmit
+    handleSubmit,
+    updateUI,
+    analyzeText
 }
