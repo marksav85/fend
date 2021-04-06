@@ -34,9 +34,9 @@ const updateUI = async () => {
   const request = await fetch('http://localhost:8090/all');
   try{
     const allData = await request.json();
-    document.getElementById('agreement').innerHTML = 'Agreement: {allData.agreement}';
-    document.getElementById('confidence').innerHTML = allData.confidence;
-    document.getElementById('irony').innerHTML = allData.irony;
+    document.getElementById('agreement').innerHTML = 'Agreement: ' + allData.agreement;
+    document.getElementById('confidence').innerHTML = 'Confidence: ' + allData.confidence;
+    document.getElementById('irony').innerHTML = 'Irony: ' + allData.irony;
   }catch(error){
     console.log("Error", error);
   }
