@@ -1,6 +1,8 @@
+
+
 // Personal API Key for meaningCloud API
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
-const apiKey = 'a30afc3cadc818a1fb48d2163587cd5f';
+const apiKey = 'hello'
 
 /* Global Variables */
 const local = 'http://localhost:8090/';
