@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
     entry: './src/client/index.js',
     output: {
@@ -29,6 +30,7 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
+<<<<<<< HEAD
             filename: "./index.html",
         }),
         new CleanWebpackPlugin({
@@ -39,6 +41,12 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
+||||||| 04a019f
+            filename: "./index.html",
+=======
+            filename: "./index.html"
+>>>>>>> test
         })
+
     ]
 }

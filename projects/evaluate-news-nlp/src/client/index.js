@@ -11,7 +11,13 @@ import './styles/header.scss';
 
 console.log(checkForName);
 
+<<<<<<< HEAD
 /*alert("I BELIEVE")*/
+||||||| 04a019f
+alert("I EXIST")
+=======
+/*alert("I EXIST")*/
+>>>>>>> test
 
 export {
     checkForName,
