@@ -47,5 +47,8 @@ function sendData (req, res) {
 app.post('/add', addData);
 function addData(req, res) {
   projectData.agreement = req.body.agreement;
+  projectData.confidence = req.body.confidence;
+  projectData.irony = req.body.irony;
+
   console.log(projectData);
 }
