@@ -10,31 +10,6 @@ const local = 'http://localhost:8090/';
 function handleSubmit(event) {
     event.preventDefault();
 
-<<<<<<< HEAD
-    // get text that user submitted
-    let formText = document.getElementById('name').value;
-    analyzeText(formText);
-}
-
-function analyzeText(formText) {
-    fetch('/userData', {
-        method: 'POST',
-        credentials: 'same-origin',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ input: formText })
-    })
-||||||| 04a019f
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-
-    Client.checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8090/test')
-=======
     // check what text was put into the form field
     let formText = document.getElementById('name').value
 
@@ -42,15 +17,8 @@ function analyzeText(formText) {
     console.log("::: Form Submitted :::")
 
     /*fetch('http://localhost:8090/test')
->>>>>>> test
     .then(res => res.json())
     .then(function(res) {
-<<<<<<< HEAD
-        let element = document.getElementById('results');
-        Client.updateUI(element, res);
-||||||| 04a019f
-        document.getElementById('results').innerHTML = res.message
-=======
         document.getElementById('results').innerHTML = res.message
     })*/
     getSentiment(baseURL, apiKey)
@@ -60,30 +28,9 @@ function analyzeText(formText) {
       })
     .then(function(){
       updateUI()
->>>>>>> test
     })
 }
 
-<<<<<<< HEAD
-function updateUI(element, content) {
-    // display error message if text couldn't be analyzed by MeaningCloud API
-    if(content.confidence === undefined) {
-        element.innerHTML = `Sorry, I couldn't analyze this text.<br><strong>Error ${content.status.code}:</strong> "${content.status.msg}"`;
-    }
-    else {
-        element.innerHTML = `<strong>Confidence: </strong>${content.confidence}<br>
-        <strong>Score tag: </strong>${content.score_tag}<br>
-        <strong>Subjectivity: </strong>${content.subjectivity}<br>
-        <strong>Irony: </strong>${content.irony}`;
-    }
-}
-
-export { updateUI };
-export { handleSubmit };
-export { analyzeText };
-||||||| 04a019f
-export { handleSubmit }
-=======
 // Function to update UI
 const updateUI = async () => {
   const request = await fetch('http://localhost:8090/all');
@@ -132,4 +79,3 @@ const postData = async ( url = '', data = {})=>{
 export { handleSubmit }
 export { updateUI }
 export { getSentiment }
->>>>>>> test
