@@ -22,7 +22,7 @@ function handleSubmit(event) {
     getSentiment(baseURL, apiKey)
     .then(function(data){
       // Add data
-      postData('http://localhost:8090/add', {agreement: data.agreement});
+      postData('http://localhost:8090/add', {agreement: data.agreement, confidence: data.confidence, irony: data.irony});
       })
     .then(function(){
       updateUI()
@@ -34,7 +34,9 @@ const updateUI = async () => {
   const request = await fetch('http://localhost:8090/all');
   try{
     const allData = await request.json();
-    document.getElementById('results').innerHTML = allData.agreement
+    document.getElementById('agreement').innerHTML = 'Agreement: {allData.agreement}';
+    document.getElementById('confidence').innerHTML = allData.confidence;
+    document.getElementById('irony').innerHTML = allData.irony;
   }catch(error){
     console.log("Error", error);
   }
