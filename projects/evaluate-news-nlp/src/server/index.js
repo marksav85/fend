@@ -48,3 +48,18 @@ function addData(req, res) {
 
   console.log(projectData);
 }
+
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
+const apiKey = 'hello'
+
+const getSentiment = async (req, res)=>{
+  const response = await fetch(baseURL + apiKey + '&lang=en&txt=Main dishes were quite good, but desserts were too sweet for me.');
+  console.log(response);
+  try {
+      const data = await response.json();
+      console.log(data);
+      return data;
+  }catch(error) {
+    console.log("Error", error);
+  }
+}

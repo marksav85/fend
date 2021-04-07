@@ -1,8 +1,7 @@
 
 
 // Personal API Key for meaningCloud API
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
-const apiKey = 'hello'
+
 
 /* Global Variables */
 const local = 'http://localhost:8090/';
@@ -45,17 +44,7 @@ const updateUI = async () => {
 }
 
 // Function to GET API Data
-const getSentiment = async (req, res)=>{
-  const response = await fetch('https://api.meaningcloud.com/sentiment-2.1?key=' + apiKey + '&lang=en&txt=Main dishes were quite good, but desserts were too sweet for me.');
-  console.log(response);
-  try {
-      const data = await response.json();
-      console.log(data);
-      return data;
-  }catch(error) {
-    console.log("Error", error);
-  }
-}
+
 
 // Function to POST data
 const postData = async ( url = '', data = {})=>{
@@ -78,4 +67,3 @@ const postData = async ( url = '', data = {})=>{
 
 export { handleSubmit }
 export { updateUI }
-export { getSentiment }
